@@ -1,4 +1,4 @@
-# Relation Extraction o between entities within a sentence
+# Relation Extraction between entities within a sentence
 
 Creating an artificial intelligence model to predict the attributes and relationships of words (entities) in a sentence.
 
@@ -723,4 +723,3 @@ entity_tokens = [e for i,e in enumerate(tokenizer.convert_ids_to_tokens(output['
 print(entity_tokens)
 
 #['조지', '해리', '##슨']
-
