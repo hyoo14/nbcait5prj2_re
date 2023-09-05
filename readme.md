@@ -32,6 +32,40 @@ relation: 단체:별칭 (org:alternate_names)
 
 {% endhighlight %}  
 
+## Approach
+
+### Easy Data Augmentation(EDA)
+
+We have deleted redundunt data and removed randomly picked data from specific label. There was a imbalance between labels so we have chose a label which portions is over 50%.
+
+### Using Special Chracters as a Entity Type Marker
+
+We use 'Typed Entity Marker with punctuation'. This method's performance is proved in the perper (An Improved Baseline for Sentence-level Relation Extraction).
+
+### Model
+
+We have used BERT as a PLM and added BiLSTM model as a classifying layer. This BiLSTM layer shows better accuracy than fully connected layer. The reasons is that BiLSTM can remember more information with long sequences.
+
+#### PLM
+
+We have used klue/roberta-large model. Which shows the best ability in predicting.
+
+#### Loss Functions
+
+We have tested focal loss function and LDAM loss function. Those functions are all for elleviating overfiting in labels which have small portion. Focal loss function adjusts the ration of labels which are imbalcned. LDAM loss function gives extra margin to labels which have small portion.
+
+### Hyper Parameter Tuning
+
+With using wandb sweep, we have tunned learning rate and alpha parameter.
+
+### Ensemble
+
+We used weighted soft voting ensemble.
+
+
+
+
+
 ## Data
 
 - input: sentence, subject_entity, object_entity의 정보를 입력으로 사용 합니다.
