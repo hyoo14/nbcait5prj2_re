@@ -2,7 +2,7 @@
 
 Creating an artificial intelligence model to predict the attributes and relationships of words (entities) in a sentence.
 
-#Boostcamp 5th #NLP
+#BC 5th #NLP
 
 Period| 2023.05.03 ~ 2023.05.18 19:00
 
